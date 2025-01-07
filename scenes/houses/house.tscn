@@ -1,8 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://b77oa1k5skiil"]
+[gd_scene load_steps=36 format=3 uid="uid://b77oa1k5skiil"]
 
 [ext_resource type="Texture2D" uid="uid://dany1yax3lhdd" path="res://graphics/tilesets/interior.png" id="1_qhiak"]
 [ext_resource type="PackedScene" uid="uid://dffhocnwr3m26" path="res://scenes/objects/simple_light.tscn" id="2_kgsxr"]
 [ext_resource type="PackedScene" uid="uid://cfqgjhnqk8anq" path="res://scenes/objects/wall_light.tscn" id="3_dwa6b"]
+[ext_resource type="PackedScene" uid="uid://3fautf4gxtps" path="res://scenes/objects/light_fan_animation.tscn" id="4_rsle2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e7wfb"]
 size = Vector2(2868, 2483)
@@ -319,3 +320,6 @@ rotation = 1.5708
 [node name="WallLight" parent="." instance=ExtResource("3_dwa6b")]
 position = Vector2(-100, 245)
 rotation = 3.14159
+
+[node name="LightFanAnimation" parent="." instance=ExtResource("4_rsle2")]
+position = Vector2(-1352, 1503)

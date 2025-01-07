@@ -203,6 +203,7 @@ animations = [{
 }]
 
 [node name="LightFanAnimation" type="AnimatedSprite2D"]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_tku3g")
 autoplay = "default"
 frame_progress = 0.0163575
