@@ -15,6 +15,11 @@ func _process(_delta):
 
 func handle_input():
 	look_at(get_global_mouse_position())
+#sprint
+	if Input.is_action_just_pressed('sprint'):
+		speed *= 2
+	if Input.is_action_just_released('sprint'):
+		speed /= 2
 #movement
 	var direction = Input.get_vector('left', 'right', 'up', 'down')
 	velocity = speed * direction
