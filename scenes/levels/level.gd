@@ -3,8 +3,9 @@ extends Node2D
 var laser_scene: PackedScene = preload('res://scenes/projectiles/laser.tscn')
 var grenade_scene: PackedScene = preload("res://scenes/projectiles/grenade.tscn")
 
-func _on_gate_player_entered_gate(body: Node2D):
-	print(body, ' entered gate')
+func _on_gate_player_entered_gate(_body):
+	var tween = create_tween()
+	tween.tween_property($Player, 'speed', 0, 0.5)
 
 func _on_player_grenade_thrown(pos: Vector2, direction: Vector2):
 	var grenade = grenade_scene.instantiate() as RigidBody2D
@@ -18,3 +19,15 @@ func _on_player_laser_shot(pos: Vector2, direction: Vector2):
 	laser.direction = direction
 	laser.rotation_degrees = rad_to_deg(direction.angle())
 	$Projectiles.add_child(laser)
+
+
+func _on_house_player_entered():
+	zoom_camera(Vector2(1, 1))
+
+
+func _on_house_player_exited():
+	zoom_camera(Vector2(.6, .6))
+
+func zoom_camera(zoom: Vector2):
+	var tween = create_tween()
+	tween.tween_property($Player/Camera2D, 'zoom', zoom, 1)

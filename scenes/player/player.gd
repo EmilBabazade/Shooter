@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-var speed: float = 500
+@export var max_speed = 500
+var speed: float = max_speed
 var can_laser: bool = true
 var can_grenade: bool = true
 var laserTimer: Timer
@@ -16,10 +17,10 @@ func _process(_delta):
 func handle_input():
 	look_at(get_global_mouse_position())
 #sprint
-	if Input.is_action_just_pressed('sprint'):
-		speed *= 2
-	if Input.is_action_just_released('sprint'):
-		speed /= 2
+	#if Input.is_action_just_pressed('sprint'):
+		#speed *= 2
+	#if Input.is_action_just_released('sprint'):
+		#speed /= 2
 #movement
 	var direction = Input.get_vector('left', 'right', 'up', 'down')
 	velocity = speed * direction
