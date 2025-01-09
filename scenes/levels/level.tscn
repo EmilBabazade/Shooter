@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c1sdf7j53ekxs"]
+[gd_scene load_steps=19 format=3 uid="uid://c1sdf7j53ekxs"]
 
 [ext_resource type="PackedScene" uid="uid://tgh5senf6t6g" path="res://scenes/player/player.tscn" id="1_5fy81"]
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_gawbi"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dnchu5yisvbnx" path="res://graphics/tilesets/soil.png" id="10_cbiub"]
 [ext_resource type="PackedScene" uid="uid://b77oa1k5skiil" path="res://scenes/houses/house.tscn" id="12_gk0kn"]
 [ext_resource type="PackedScene" uid="uid://cty6h5w0tmp6i" path="res://scenes/objects/steam_vent.tscn" id="14_5vbqc"]
+[ext_resource type="PackedScene" uid="uid://h78odh6i6auu" path="res://scenes/drone/drone.tscn" id="14_jfdri"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kuk4o"]
 resource_name = "walls"
@@ -118,6 +119,9 @@ rotation = -1.89368
 position = Vector2(-189, 449)
 
 [node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Drone" parent="." instance=ExtResource("14_jfdri")]
+position = Vector2(533, 527)
 
 [node name="Player" parent="." instance=ExtResource("1_5fy81")]
 position = Vector2(533, 527)
