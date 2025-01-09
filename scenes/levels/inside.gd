@@ -1,7 +1,9 @@
 extends LevelParent
 
-
+var outside_level: PackedScene = preload("res://scenes/levels/outside.tscn")
 
 func _on_area_2d_body_entered(_body):
-	var tween = create_tween()
-	tween.tween_property($Player, 'speed', 0, 0.5)
+	call_deferred('change_level')
+
+func change_level():
+	get_tree().change_scene_to_packed(outside_level)
