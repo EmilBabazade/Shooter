@@ -27,7 +27,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 853.708, 191.118)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(0.784314, 0.160784, 0.25098, 1)
+color = Color(0.662745, 0.258824, 0.576471, 1)
 energy = 7.0
 shadow_enabled = true
 shadow_color = Color(0.0941176, 0, 0, 0)
