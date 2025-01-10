@@ -4,15 +4,13 @@ extends CharacterBody2D
 var speed: float = max_speed
 var can_laser: bool = true
 var can_grenade: bool = true
-var laserTimer: Timer
-var grenadeTimer: Timer
+@onready var laserTimer: Timer = $LaserTimer
+@onready var grenadeTimer: Timer = $GrenadeTimer
 signal laser_shot(pos: Vector2, direction: Vector2)
 signal grenade_thrown(pos: Vector2, direction: Vector2)
 
 func _process(_delta):
 	handle_input()
-	laserTimer = $LaserTimer
-	grenadeTimer = $GrenadeTimer
 
 func handle_input():
 	look_at(get_global_mouse_position())
@@ -27,13 +25,15 @@ func handle_input():
 	move_and_slide()
 #shooting
 	var player_driection = position.direction_to(get_global_mouse_position())
-	if Input.is_action_pressed('primary') and can_laser:		
+	if Input.is_action_pressed('primary') and can_laser and Globals.laser_amount > 0:		
+		Globals.laser_amount -= 1
 		can_laser = false
 		laserTimer.start()
 		laser_shot.emit(get_projectile_start_position(), player_driection)
 		($LaserParticles as GPUParticles2D).emitting = true
 		
-	if Input.is_action_pressed('secondary') and can_grenade:
+	if Input.is_action_pressed('secondary') and can_grenade and Globals.grenade_amount > 0:
+		Globals.grenade_amount -= 1
 		can_grenade = false
 		grenadeTimer.start()
 		grenade_thrown.emit(get_projectile_start_position(), player_driection)
