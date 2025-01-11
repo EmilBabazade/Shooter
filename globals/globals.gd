@@ -23,12 +23,12 @@ var health: int = 60:
 	get:
 		return health
 	set(value):
-		if value >= 0 and value <= 100 and value <= health and vulnerable:
-			health = value
+		if value <= health and vulnerable:
+			health = max(value, 0)
 			set_vulnerable()
 			health_changed.emit()
 		if value >= health:
-			health = value
+			health = min(value, 100)
 			health_changed.emit()
 
 func set_vulnerable():
