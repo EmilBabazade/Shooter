@@ -54,6 +54,24 @@ sources/1 = SubResource("TileSetAtlasSource_7g5mb")
 [node name="Outside" instance=ExtResource("1_nlwy6")]
 script = ExtResource("2_ssqsi")
 
+[node name="Gate" parent="." index="1" instance=ExtResource("11_hwt62")]
+z_index = 1
+
+[node name="Toilet" parent="." index="2" instance=ExtResource("15_os4u3")]
+position = Vector2(302, 937)
+rotation = -1.5708
+
+[node name="Crate" parent="." index="3" instance=ExtResource("15_46636")]
+position = Vector2(984, 1054)
+
+[node name="Crate2" parent="." index="4" instance=ExtResource("15_46636")]
+position = Vector2(1326, 876)
+rotation = 1.5708
+
+[node name="Crate3" parent="." index="5" instance=ExtResource("15_46636")]
+position = Vector2(1372, 527)
+rotation = -1.5708
+
 [node name="Soil" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
 position = Vector2(437, 648)
@@ -116,27 +134,12 @@ position = Vector2(-189, 449)
 position = Vector2(-2969, 1709)
 rotation = -1.89368
 
-[node name="Gate" parent="." index="1" instance=ExtResource("11_hwt62")]
-
-[node name="Toilet" parent="." index="2" instance=ExtResource("15_os4u3")]
-position = Vector2(302, 937)
-rotation = -1.5708
-
-[node name="Crate" parent="." index="3" instance=ExtResource("15_46636")]
-position = Vector2(984, 1054)
-
-[node name="Crate2" parent="." index="4" instance=ExtResource("15_46636")]
-position = Vector2(1326, 876)
-rotation = 1.5708
-
-[node name="Crate3" parent="." index="5" instance=ExtResource("15_46636")]
-position = Vector2(1372, 527)
-rotation = -1.5708
-
-[node name="Projectiles" parent="." index="6"]
+[node name="Projectiles" parent="." index="7"]
 metadata/_edit_lock_ = true
 
 [node name="Item" parent="." index="9" instance=ExtResource("15_er0hm")]
 position = Vector2(1140, 606)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]

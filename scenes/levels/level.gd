@@ -28,14 +28,3 @@ func _on_player_laser_shot(pos: Vector2, direction: Vector2):
 	laser.direction = direction
 	laser.rotation_degrees = rad_to_deg(direction.angle())
 	$Projectiles.add_child(laser)
-
-func _on_house_player_entered():
-	zoom_camera(Vector2(1, 1))
-
-
-func _on_house_player_exited():
-	zoom_camera(Vector2(.6, .6))
-
-func zoom_camera(zoom: Vector2):
-	var tween = create_tween()
-	tween.tween_property($Player/Camera2D, 'zoom', zoom, 1)
