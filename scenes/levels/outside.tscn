@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbbebojgr33np"]
+[gd_scene load_steps=19 format=3 uid="uid://dbbebojgr33np"]
 
 [ext_resource type="PackedScene" uid="uid://c1sdf7j53ekxs" path="res://scenes/levels/level.tscn" id="1_nlwy6"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_ssqsi"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bhutpiyrgbnxx" path="res://scenes/objects/gate.tscn" id="11_hwt62"]
 [ext_resource type="PackedScene" uid="uid://b77oa1k5skiil" path="res://scenes/houses/house.tscn" id="12_ykhuf"]
 [ext_resource type="PackedScene" uid="uid://cty6h5w0tmp6i" path="res://scenes/objects/steam_vent.tscn" id="13_r86wx"]
+[ext_resource type="PackedScene" uid="uid://c1g2fj4w8l05d" path="res://scenes/items/item.tscn" id="15_er0hm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kuk4o"]
 resource_name = "walls"
@@ -117,5 +118,35 @@ rotation = -1.89368
 
 [node name="Projectiles" parent="." index="2"]
 metadata/_edit_lock_ = true
+
+[node name="Item" parent="." index="5" instance=ExtResource("15_er0hm")]
+position = Vector2(1140, 606)
+
+[node name="Item2" parent="." index="6" instance=ExtResource("15_er0hm")]
+position = Vector2(845, 1235)
+
+[node name="Item3" parent="." index="7" instance=ExtResource("15_er0hm")]
+position = Vector2(1318, 1124)
+
+[node name="Item4" parent="." index="8" instance=ExtResource("15_er0hm")]
+position = Vector2(1340, 790)
+
+[node name="Item5" parent="." index="9" instance=ExtResource("15_er0hm")]
+position = Vector2(1438, 422)
+
+[node name="Item6" parent="." index="10" instance=ExtResource("15_er0hm")]
+position = Vector2(832, 873)
+
+[node name="Item7" parent="." index="11" instance=ExtResource("15_er0hm")]
+position = Vector2(613, 1022)
+
+[node name="Item8" parent="." index="12" instance=ExtResource("15_er0hm")]
+position = Vector2(1496, 1048)
+
+[node name="Item9" parent="." index="13" instance=ExtResource("15_er0hm")]
+position = Vector2(1604, 644)
+
+[node name="Item10" parent="." index="14" instance=ExtResource("15_er0hm")]
+position = Vector2(1089, 1016)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

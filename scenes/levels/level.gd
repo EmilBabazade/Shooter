@@ -9,7 +9,6 @@ func _on_player_grenade_thrown(pos: Vector2, direction: Vector2):
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
-	$UI.update_grenade()
 
 func _on_player_laser_shot(pos: Vector2, direction: Vector2):
 	var laser = laser_scene.instantiate() as Area2D
@@ -17,7 +16,6 @@ func _on_player_laser_shot(pos: Vector2, direction: Vector2):
 	laser.direction = direction
 	laser.rotation_degrees = rad_to_deg(direction.angle())
 	$Projectiles.add_child(laser)
-	$UI.update_laser()
 
 func _on_house_player_entered():
 	zoom_camera(Vector2(1, 1))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ykujkm3miapc"]
+[gd_scene load_steps=14 format=3 uid="uid://ykujkm3miapc"]
 
 [ext_resource type="PackedScene" uid="uid://c1sdf7j53ekxs" path="res://scenes/levels/level.tscn" id="1_stujt"]
 [ext_resource type="Texture2D" uid="uid://csgm5f2u3setn" path="res://graphics/ground/dirt.png" id="2_477i8"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bv6bh16wuto31" path="res://graphics/lights/overlays/hole.png" id="6_2drax"]
 [ext_resource type="Texture2D" uid="uid://ctnaxn03vshnp" path="res://graphics/lights/textures/circle.png" id="6_cmepe"]
 [ext_resource type="Texture2D" uid="uid://dn2pmwewp1syc" path="res://graphics/lights/overlays/lattice.png" id="7_ypc3c"]
+[ext_resource type="PackedScene" uid="uid://c1g2fj4w8l05d" path="res://scenes/items/item.tscn" id="12_kcgpr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51vxn"]
 size = Vector2(506, 739)
@@ -22,6 +23,9 @@ script = ExtResource("2_po6h5")
 color = Color(0.6, 0.686275, 0.807843, 1)
 blend_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="Ground" parent="." index="1"]
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Ground" index="0"]
 position = Vector2(-323, 2740)
@@ -255,5 +259,8 @@ collision_layer = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGate" index="0"]
 position = Vector2(-19, -28.5)
 shape = SubResource("RectangleShape2D_51vxn")
+
+[node name="Item" parent="." index="7" instance=ExtResource("12_kcgpr")]
+position = Vector2(4242, 1035)
 
 [connection signal="body_entered" from="ExitGate" to="." method="_on_area_2d_body_entered"]
