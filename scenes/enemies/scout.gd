@@ -14,7 +14,7 @@ func _process(delta):
 		var spawn_marker = $LaserSpawns/Marker2D if right_gun else $LaserSpawns/Marker2D2
 		var direction = position.direction_to(Globals.player_position)
 		laser.emit(spawn_marker.global_position, direction)
-		#can_laser = false
+		can_laser = false
 		$LaserCooldownTimer.start()
 
 

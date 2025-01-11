@@ -3,6 +3,7 @@ extends RigidBody2D
 @export var speed: int = 750
 
 var entities: Array[Node2D] = []
+var exploded = false
 
 func explode():
 	var ap = $AnimationPlayer as AnimationPlayer
@@ -11,9 +12,12 @@ func explode():
 	collision_mask = 0
 	linear_velocity = Vector2.ZERO
 	angular_velocity = 0
-	for e in entities:
-		e.hit(20)
+	exploded = true
 
+func _process(delta):
+	if exploded:
+		for e in entities:
+			e.hit(10)
 
 func _on_damage_range_body_entered(body):
 	if body.is_in_group('entity'):
