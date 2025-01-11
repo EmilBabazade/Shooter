@@ -18,11 +18,22 @@ var grenade_amount: int = 5:
 		grenade_amount = value
 		grenade_changed.emit()
 
+var vulnerable = true
 var health: int = 60:
 	get:
 		return health
 	set(value):
-		health = value
-		health_changed.emit()
+		if value >= 0 and value <= 100 and value <= health and vulnerable:
+			health = value
+			set_vulnerable()
+			health_changed.emit()
+		if value >= health:
+			health = value
+			health_changed.emit()
+
+func set_vulnerable():
+	vulnerable = false
+	await get_tree().create_timer(0.5).timeout
+	vulnerable = true
 
 var player_position: Vector2

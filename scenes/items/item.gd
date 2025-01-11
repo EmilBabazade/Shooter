@@ -31,6 +31,5 @@ func _on_body_entered(_body):
 		'grenade':
 			Globals.grenade_amount += 1
 		'health':
-			if(Globals.health < 100):
-				Globals.health = Globals.health + 10
+			Globals.health += 10
 	queue_free()
