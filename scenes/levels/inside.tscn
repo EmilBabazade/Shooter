@@ -124,14 +124,6 @@ position = Vector2(2769, 216)
 [node name="Projectiles" parent="." index="2"]
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." index="3"]
-position = Vector2(5133, 1246)
-metadata/_edit_group_ = true
-
-[node name="PointLight2D" type="PointLight2D" parent="Player" index="8"]
-texture = ExtResource("6_cmepe")
-texture_scale = 3.0
-
 [node name="Lights" type="Node" parent="." index="4"]
 
 [node name="LightFanAnimation" parent="Lights" index="0" instance=ExtResource("4_f5wki")]
@@ -259,6 +251,14 @@ collision_layer = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGate" index="0"]
 position = Vector2(-19, -28.5)
 shape = SubResource("RectangleShape2D_51vxn")
+
+[node name="Player" parent="." index="6"]
+position = Vector2(5133, 1246)
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Player" index="8"]
+texture = ExtResource("6_cmepe")
+texture_scale = 3.0
 
 [node name="Item" parent="." index="7" instance=ExtResource("12_kcgpr")]
 position = Vector2(4242, 1035)

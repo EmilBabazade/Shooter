@@ -125,18 +125,10 @@ rotation = -1.5708
 [node name="Crate" parent="." index="3" instance=ExtResource("15_46636")]
 position = Vector2(984, 1054)
 
-[node name="Crate2" parent="." index="4" instance=ExtResource("15_46636")]
-position = Vector2(1326, 876)
-rotation = 1.5708
-
-[node name="Crate3" parent="." index="5" instance=ExtResource("15_46636")]
-position = Vector2(1372, 527)
-rotation = -1.5708
-
-[node name="Projectiles" parent="." index="6"]
+[node name="Projectiles" parent="." index="4"]
 metadata/_edit_lock_ = true
 
-[node name="Item" parent="." index="9" instance=ExtResource("15_er0hm")]
+[node name="Item" parent="." index="7" instance=ExtResource("15_er0hm")]
 position = Vector2(1140, 606)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

@@ -11,6 +11,8 @@ script = ExtResource("1_gawbi")
 
 [node name="Projectiles" type="Node2D" parent="."]
 
+[node name="Items" type="Node2D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("1_5fy81")]
 position = Vector2(533, 527)
 

@@ -1,4 +1,7 @@
 extends ItemContainerParent
 
 func hit():
-	print("shitting wasn't enough, now you are hitting me?")
+	open_container(get_spawn_position, 1)
+
+func get_spawn_position():
+	return $SpawnPoints/Marker.global_position
