@@ -41,6 +41,10 @@ position = Vector2(122, 10)
 [node name="LaserCooldownTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="DamagableTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
 [connection signal="timeout" from="LaserCooldownTimer" to="." method="_on_laser_cooldown_timer_timeout"]
+[connection signal="timeout" from="DamagableTimer" to="." method="_on_damagable_timer_timeout"]

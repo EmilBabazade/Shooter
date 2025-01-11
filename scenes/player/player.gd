@@ -49,5 +49,5 @@ func get_projectile_start_position() -> Vector2:
 	var marker = $LaserStartPosition.get_children()[randi() % 3]
 	return marker.global_position
 
-func hit():
-	print('player hit!')
+func hit(damage: int):
+	Globals.health -= damage

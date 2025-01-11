@@ -9,7 +9,7 @@ func _process(delta):
 
 func _on_body_entered(body: Node2D):
 	if 'hit' in body:
-		body.hit()
+		body.hit(10)
 	queue_free()
 
 

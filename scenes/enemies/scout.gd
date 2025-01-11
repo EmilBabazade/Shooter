@@ -5,6 +5,8 @@ signal laser(pos: Vector2, direction: Vector2)
 var player_nearby = false
 var can_laser = true
 var right_gun = true
+var health = 30
+var vunrelable = true
 
 func _process(delta):
 	look_at(Globals.player_position)
@@ -27,5 +29,14 @@ func _on_range_body_exited(body):
 func _on_laser_cooldown_timer_timeout():
 	can_laser = true
 
-func hit():
-	print('scout hit')
+func hit(damage: int):
+	if vunrelable:
+		health -= damage
+		vunrelable = false
+		$DamagableTimer.start()
+	if health <= 0:
+		queue_free()
+
+
+func _on_damagable_timer_timeout():
+	vunrelable = true

@@ -12,7 +12,7 @@ func explode():
 	linear_velocity = Vector2.ZERO
 	angular_velocity = 0
 	for e in entities:
-		e.hit()
+		e.hit(20)
 
 
 func _on_damage_range_body_entered(body):

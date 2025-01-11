@@ -167,7 +167,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6vol0"]
-radius = 125.1
+radius = 183.011
 
 [node name="Grenade" type="RigidBody2D"]
 collision_layer = 8

@@ -1,6 +1,6 @@
 extends ItemContainerParent
 
-func hit():
+func hit(damage: int):
 	open_container(get_spawn_position, 5)
 
 func get_spawn_position():
