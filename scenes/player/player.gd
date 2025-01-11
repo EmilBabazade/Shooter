@@ -23,6 +23,7 @@ func handle_input():
 	var direction = Input.get_vector('left', 'right', 'up', 'down')
 	velocity = speed * direction
 	move_and_slide()
+	Globals.player_position = global_position
 #shooting
 	var player_driection = position.direction_to(get_global_mouse_position())
 	if Input.is_action_pressed('primary') and can_laser and Globals.laser_amount > 0:		

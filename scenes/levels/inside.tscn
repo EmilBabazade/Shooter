@@ -944,7 +944,7 @@ metadata/_edit_lock_ = true
 [node name="Items" parent="." index="8"]
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." index="9"]
+[node name="Player" parent="." index="10"]
 position = Vector2(5244, 1186)
 metadata/_edit_group_ = true
 

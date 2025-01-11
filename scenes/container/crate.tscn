@@ -9,6 +9,7 @@
 size = Vector2(200, 92)
 
 [node name="Crate" instance=ExtResource("1_vaxgp")]
+z_index = 1
 scale = Vector2(2, 2)
 script = ExtResource("2_m735u")
 

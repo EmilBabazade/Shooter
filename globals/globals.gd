@@ -24,3 +24,5 @@ var health: int = 60:
 	set(value):
 		health = value
 		health_changed.emit()
+
+var player_position: Vector2
