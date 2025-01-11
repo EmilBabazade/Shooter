@@ -8,7 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_chrct"]
 radius = 62.0
 
-[node name="Toilet" instance=ExtResource("1_2q8hf")]
+[node name="Toilet" groups=["entity"] instance=ExtResource("1_2q8hf")]
 z_index = 1
 script = ExtResource("2_sand1")
 

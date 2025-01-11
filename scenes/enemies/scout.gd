@@ -26,3 +26,6 @@ func _on_range_body_exited(body):
 
 func _on_laser_cooldown_timer_timeout():
 	can_laser = true
+
+func hit():
+	print('scout hit')

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b8mggllk0rwup"]
+[gd_scene load_steps=12 format=3 uid="uid://b8mggllk0rwup"]
 
 [ext_resource type="Script" path="res://scenes/projectiles/grenade.gd" id="1_5tivb"]
 [ext_resource type="Texture2D" uid="uid://psdgnby20trd" path="res://graphics/projectiles/grenade.png" id="1_bt3qw"]
@@ -166,6 +166,9 @@ _data = {
 "explosion": SubResource("Animation_cg150")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6vol0"]
+radius = 125.1
+
 [node name="Grenade" type="RigidBody2D"]
 collision_layer = 8
 collision_mask = 15
@@ -200,3 +203,13 @@ texture = ExtResource("3_o8822")
 hframes = 8
 vframes = 8
 frame = 27
+
+[node name="DamageRange" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 7
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DamageRange"]
+shape = SubResource("CircleShape2D_6vol0")
+
+[connection signal="body_entered" from="DamageRange" to="." method="_on_damage_range_body_entered"]
+[connection signal="body_exited" from="DamageRange" to="." method="_on_damage_range_body_exited"]

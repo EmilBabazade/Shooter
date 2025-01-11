@@ -48,3 +48,6 @@ func _on_grenade_timer_timeout():
 func get_projectile_start_position() -> Vector2:
 	var marker = $LaserStartPosition.get_children()[randi() % 3]
 	return marker.global_position
+
+func hit():
+	print('player hit!')
