@@ -8,7 +8,7 @@ var right_gun = true
 var health = 30
 var vunrelable = true
 
-func _process(delta):
+func _process(_delta):
 	look_at(Globals.player_position)
 	if player_nearby and can_laser:
 		var spawn_marker = $LaserSpawns/Marker2D if right_gun else $LaserSpawns/Marker2D2
@@ -18,11 +18,11 @@ func _process(delta):
 		$LaserCooldownTimer.start()
 
 
-func _on_range_body_entered(body):
+func _on_range_body_entered(_body):
 	player_nearby = true
 
 
-func _on_range_body_exited(body):
+func _on_range_body_exited(_body):
 	player_nearby = false
 
 
@@ -34,9 +34,11 @@ func hit(damage: int):
 		health -= damage
 		vunrelable = false
 		$DamagableTimer.start()
+		$Sprite2D.material.set_shader_parameter('progress', 1)
 	if health <= 0:
 		queue_free()
 
 
 func _on_damagable_timer_timeout():
 	vunrelable = true
+	$Sprite2D.material.set_shader_parameter('progress', 0)

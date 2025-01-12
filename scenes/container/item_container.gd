@@ -6,7 +6,7 @@ class_name ItemContainerParent
 signal open(pos: Vector2, direction: Vector2)
 var isOpen = false
 
-func hit(damage: int):
+func hit(_damage: int):
 	open_container()
 
 func open_container(get_item_position: Callable = func(): return position, 

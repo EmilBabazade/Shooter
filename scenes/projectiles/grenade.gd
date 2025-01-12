@@ -14,7 +14,7 @@ func explode():
 	angular_velocity = 0
 	exploded = true
 
-func _process(delta):
+func _process(_delta):
 	if exploded:
 		for e in entities:
 			e.hit(10)
