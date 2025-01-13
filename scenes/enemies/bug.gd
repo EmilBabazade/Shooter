@@ -57,9 +57,11 @@ func hit(damage):
 		return
 	health -= damage
 	animator.material.set_shader_parameter('progress', 1)
-	if health <= 0:
-		queue_free()
 	invulnerable = true
+	$HitParticles.emitting = true
+	if health <= 0:
+		await get_tree().create_timer(0.5).timeout
+		queue_free()
 	$InvulnerableTimer.start()
 
 
