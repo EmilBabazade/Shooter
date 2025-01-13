@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed: int = 200
-var acceleration: int = 2
+var acceleration: int = 10
 var player_detected = false
 var exploding = false
 
@@ -13,14 +13,14 @@ func _ready():
 	$ExplosionSprite.frame = 0
 	($Sprite2D as Sprite2D).visible = true
 
-func _process(_delta):
+func _process(delta):
 	if player_detected:
 		var direction = position.direction_to(Globals.player_position)
 		velocity = speed * direction
 		speed += acceleration
-		move_and_slide()
-	if get_slide_collision_count() > 0:
-		start_explosion()
+		var collision = move_and_collide(velocity * delta)
+		if collision:
+			start_explosion()
 	if exploding:
 		for e in entities:
 			if 'hit' in e:
