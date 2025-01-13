@@ -1,8 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://h78odh6i6auu"]
+[gd_scene load_steps=12 format=3 uid="uid://h78odh6i6auu"]
 
 [ext_resource type="Script" path="res://scenes/enemies/drone.gd" id="1_fhxoj"]
 [ext_resource type="Texture2D" uid="uid://bd35l1wllfvgj" path="res://graphics/enemies/drone.png" id="1_s6vjo"]
+[ext_resource type="Shader" path="res://scenes/enemies/scout.gdshader" id="2_hin0n"]
 [ext_resource type="Texture2D" uid="uid://boug07xidc67c" path="res://graphics/explosions/explosion_1.png" id="3_8fpja"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xedu"]
+shader = ExtResource("2_hin0n")
+shader_parameter/color = Color(0.839216, 0.25098, 0.227451, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqqlf"]
 radius = 32.0
@@ -87,6 +93,7 @@ script = ExtResource("1_fhxoj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
+material = SubResource("ShaderMaterial_0xedu")
 position = Vector2(3, 0)
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)

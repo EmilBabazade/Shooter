@@ -27,6 +27,9 @@ func _process(delta):
 				e.hit(20)
 
 func hit(_damage):
+	$Sprite2D.material.set_shader_parameter('progress', 1)
+	await get_tree().create_timer(0.1).timeout
+	$Sprite2D.material.set_shader_parameter('progress', 0)
 	start_explosion()
 
 
