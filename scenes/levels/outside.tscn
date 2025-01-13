@@ -146,7 +146,7 @@ position = Vector2(1140, 606)
 position = Vector2(2716, 712)
 
 [node name="Bug" parent="Enemies" index="1" instance=ExtResource("19_h4lat")]
-position = Vector2(1296, 1750)
+position = Vector2(697, 1340)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]

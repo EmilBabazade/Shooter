@@ -146,12 +146,13 @@ radius = 52.0
 height = 162.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ul8cw"]
-radius = 1175.54
+radius = 922.12
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_001ui"]
-radius = 26.0768
+radius = 48.945
 
 [node name="Bug" type="CharacterBody2D" groups=["entity"]]
+scale = Vector2(0.7, 0.7)
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_tcsj8")
@@ -162,9 +163,7 @@ position = Vector2(27, -1.90735e-06)
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_e4uwp")
-animation = &"attack"
-frame = 20
-frame_progress = 1.0
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -186,13 +185,13 @@ shape = SubResource("CircleShape2D_001ui")
 debug_color = Color(0.607843, 0.0588235, 0.14902, 0.419608)
 
 [node name="AttackCooldown" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 
 [node name="InvulnerableTimer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="NoticeArea2D" to="." method="_on_notice_area_2d_body_entered"]
 [connection signal="body_exited" from="NoticeArea2D" to="." method="_on_notice_area_2d_body_exited"]
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_attack_area_2d_body_entered"]
